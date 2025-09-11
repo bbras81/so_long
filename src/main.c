@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-09-11 07:59:47 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/11 17:49:29 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/11 20:06:45 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int	main(void)
 {
+	ft_printf("Teste do so_long\n");
 	return (0);
 }
