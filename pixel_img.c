@@ -23,6 +23,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void	my_image_render(t_data *img)
 {
+	
 	int	x;
 	int	y;
 
