@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   map_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/13 08:47:48 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 09:23:23 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/09/13 08:59:20 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/09/13 09:13:05 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-static int	init_game(char *arg)
+void	open_path(char *arg)
 {
-  open_path(arg);
-  return 0;
-}
+	int	fd;
 
-int	main(int argc, char **argv)
-{
-	int	len;
-
-	if (argc != 2)
-		print_error("Wrong number of arguments. Usage: ./so_long <map.ber>");
-	len = ft_strlen(argv[1]);
-	if (len <= 4 || ft_strncmp(argv[1] + len - 4, ".ber", 4) != 0)
-		print_error("Invalid file extension. Must be .ber");
-	if (!init_game(argv[1]))
-		return (1);
-	return (0);
+	fd = open(arg, O_RDONLY);
+	if (fd < 0)
+		print_error("Could not open map file.");
 }

@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-09-11 07:59:18 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/12 13:56:20 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/13 09:13:37 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include <unistd.h>
+
 void	print_error(char *msg);
+void	open_path(char *arg);
 #endif // !SO_LONG_H

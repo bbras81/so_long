@@ -6,7 +6,7 @@
 #    By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 17:25:31 by brunmigu          #+#    #+#              #
-#    Updated: 2025/09/12 17:29:06 by brunmigu         ###   ########.fr        #
+#    Updated: 2025/09/13 08:55:56 by brunmigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INC_DIR = includes
 MLX_DIR = minilibx-linux
 LIBFT_DIR = libft
 
-SRC = $(SRC_DIR)/main.c $(SRC_DIR)/error_handler.c
+SRC = $(SRC_DIR)/main.c $(SRC_DIR)/error_handler.c $(SRC_DIR)/map_utils.c
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 CC = cc
