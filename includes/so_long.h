@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-09-11 07:59:18 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 09:13:37 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/13 11:43:47 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/includes/libft.h"
 # include <fcntl.h>
+# include <stddef.h>
 # include <stdlib.h>
 # include <sys/stat.h>
 # include <sys/types.h>
@@ -24,4 +25,5 @@ void	print_error(char *msg);
 int		map_len(char *arg);
 char	**open_map(int len, char *arg);
 int		map_free(char **map);
+int		check_map(char **map);
 #endif // !SO_LONG_H

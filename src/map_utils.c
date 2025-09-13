@@ -6,12 +6,11 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:59:20 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 10:00:57 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/13 12:26:50 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-#include <stdlib.h>
 
 int	map_len(char *arg)
 {
@@ -30,6 +29,27 @@ int	map_len(char *arg)
 	}
 	close(fd);
 	return (map_len);
+}
+static void	change_to_null(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	if (!map)
+		print_error("Change to nul!");
+	while (map[i])
+	{
+		while (map[i][j])
+		{
+			if (map[i][j] == '\n')
+				map[i][j] = '\0';
+			j++;
+		}
+    j = 0;
+		i++;
+	}
 }
 
 char	**open_map(int len, char *arg)
@@ -56,6 +76,7 @@ char	**open_map(int len, char *arg)
 	}
 	map[i] = NULL;
 	close(fd);
+	change_to_null(map);
 	return (map);
 }
 
