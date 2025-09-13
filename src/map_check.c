@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 11:31:40 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 11:51:32 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/13 12:56:48 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,16 @@ static int	is_rectangle(char **map)
 	first_line = ft_strlen(map[0]);
 	while (map[counter])
 	{
-		if(ft_strlen(map[counter]) != first_line)
-			print_error("The map must be rectangular");
+		if (ft_strlen(map[counter]) != first_line)
+		{
+			if (ft_strlen(map[counter]) == 0)
+			{
+				counter++;
+				continue ;
+			}
+			else
+				print_error("The map must be rectangular");
+		}
 		counter++;
 	}
 	return (0);
