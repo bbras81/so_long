@@ -21,5 +21,7 @@
 # include <unistd.h>
 
 void	print_error(char *msg);
-void	open_path(char *arg);
+int		map_len(char *arg);
+char	**open_map(int len, char *arg);
+int		map_free(char **map);
 #endif // !SO_LONG_H

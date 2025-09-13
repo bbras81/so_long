@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 08:47:48 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 09:23:23 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/13 09:47:09 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 
 static int	init_game(char *arg)
 {
-  open_path(arg);
-  return 0;
+	int		len_map;
+	int		y;
+	char	**map;
+
+	y = 0;
+	len_map = map_len(arg);
+	map = open_map(len_map, arg);
+	while (map[y])
+	{
+		ft_printf("%s", map[y]);
+		y++;
+	}
+  map_free(map);
+	return (0);
 }
 
 int	main(int argc, char **argv)
