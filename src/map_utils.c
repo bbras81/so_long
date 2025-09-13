@@ -43,7 +43,7 @@ char	**open_map(int len, char *arg)
 	map = NULL;
 	if (!arg)
 		print_error("No map file provided.");
-	map = malloc(sizeof(char *) * len);
+	map = malloc(sizeof(char *) * (len + 1));
 	if (!map)
 		print_error("Allocation error");
 	fd = open(arg, O_RDONLY);
@@ -63,7 +63,7 @@ int	map_free(char **map)
 {
 	int	i;
 
-  i = 0;
+	i = 0;
 	while (map[i])
 	{
 		free(map[i]);
