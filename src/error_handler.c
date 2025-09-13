@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
+/*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-09-11 07:59:18 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/12 13:56:20 by brunmigu         ###   ########.fr       */
+/*   Created: 2025/09/12 13:24:19 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/09/12 13:27:12 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "../includes/so_long.h"
 
-# include "../libft/includes/libft.h"
-# include <fcntl.h>
-# include <stdlib.h>
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <unistd.h>
-void	print_error(char *msg);
-#endif // !SO_LONG_H
+void	print_error(char *msg)
+{
+	ft_printf("Error\n%s\n", msg);
+	exit(EXIT_FAILURE);
+}

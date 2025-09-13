@@ -5,11 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/09/11 18:31:26 by brunmigu          #+#    #+#              #
-#    Updated: 2025/09/11 18:31:30 by brunmigu         ###   ########.fr        #
+#    Created: 2025/09/12 17:25:31 by brunmigu          #+#    #+#              #
+#    Updated: 2025/09/12 17:29:06 by brunmigu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME = so_long
 
@@ -19,11 +18,11 @@ INC_DIR = includes
 MLX_DIR = minilibx-linux
 LIBFT_DIR = libft
 
-SRC = $(SRC_DIR)/main.c
+SRC = $(SRC_DIR)/main.c $(SRC_DIR)/error_handler.c
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(LIBFT_DIR)
+CFLAGS = -g -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(LIBFT_DIR)
 LDFLAGS = -L$(MLX_DIR) -lmlx -lXext -lX11 -lm -L$(LIBFT_DIR) -lft
 
 all: $(NAME)
