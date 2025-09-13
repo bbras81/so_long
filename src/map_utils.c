@@ -47,7 +47,7 @@ static void	change_to_null(char **map)
 				map[i][j] = '\0';
 			j++;
 		}
-    j = 0;
+		j = 0;
 		i++;
 	}
 }
@@ -84,6 +84,8 @@ int	map_free(char **map)
 {
 	int	i;
 
+	if (!map)
+		return (0);
 	i = 0;
 	while (map[i])
 	{
