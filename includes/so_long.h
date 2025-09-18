@@ -27,4 +27,7 @@ int		map_len(char *arg);
 char	**open_map(int len, char *arg);
 int		map_free(char **map);
 int		check_map(char **map);
+char	**cpy_char(char **map);
+void	get_player(char **map, int *i, int *j);
+int	map_len_arr(char **map);
 #endif // !SO_LONG_H

@@ -129,8 +129,18 @@ static void	check_content(char **map)
 
 int	check_map(char **map)
 {
+	int		i;
+	int		j;
+	char	**cpy_map;
+
+	i = 0;
+	j = 0;
 	is_rectangle(map);
 	check_walls(map);
 	check_content(map);
+	cpy_map = cpy_char(map);
+	get_player(map, &i, &j);
+  map_free(cpy_map);
+
 	return (0);
 }
