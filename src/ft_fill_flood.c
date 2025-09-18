@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handler.c                                    :+:      :+:    :+:   */
+/*   ft_fill_flood.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/12 13:24:19 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/12 13:27:12 by brunmigu         ###   ########.fr       */
+/*   Created: 2025-09-17 22:12:31 by brunmigu          #+#    #+#             */
+/*   Updated: 2025/09/17 23:53:45 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	print_error(char *msg)
+static void	get_player(char **map, int *i, int *j)
 {
-	ft_printf("Error\n%s\n", msg);
-	exit(EXIT_FAILURE);
+
+	while (map[*i])
+	{
+		while (map[*i][*j])
+		{
+      if (map[*i][*j] == 'P')
+        break;
+      (*j)++;
+		}
+    *j = 0;
+    (*i)++;
+	}
 }
 
-void	print_error_free(char *msg, char **map)
-{
-	map_free(map);
-	ft_printf("Error\n%s\n", msg);
-	exit(EXIT_FAILURE);
-}
+

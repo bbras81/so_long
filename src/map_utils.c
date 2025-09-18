@@ -38,7 +38,7 @@ static void	change_to_null(char **map)
 	i = 0;
 	j = 0;
 	if (!map)
-		print_error("Change to nul!");
+		print_error_free("Change to nul!", map);
 	while (map[i])
 	{
 		while (map[i][j])
@@ -65,10 +65,10 @@ char	**open_map(int len, char *arg)
 		print_error("No map file provided.");
 	map = malloc(sizeof(char *) * (len + 1));
 	if (!map)
-		print_error("Allocation error");
+		print_error_free("Allocation error", map);
 	fd = open(arg, O_RDONLY);
 	if (fd < 0)
-		print_error("Could not open map file.");
+		print_error_free("Could not open map file.", map);
 	while ((file_content = get_next_line(fd)) != NULL)
 	{
 		map[i] = file_content;

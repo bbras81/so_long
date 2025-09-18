@@ -22,6 +22,7 @@
 # include <unistd.h>
 
 void	print_error(char *msg);
+void	print_error_free(char *msg, char **map);
 int		map_len(char *arg);
 char	**open_map(int len, char *arg);
 int		map_free(char **map);
