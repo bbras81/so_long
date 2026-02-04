@@ -30,7 +30,7 @@ int	map_len(char *arg)
 	close(fd);
 	return (map_len);
 }
-static void	change_to_null(char **map)
+void	change_to_null(char **map)
 {
 	int	i;
 	int	j;

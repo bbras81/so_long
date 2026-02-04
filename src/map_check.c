@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/13 11:31:40 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/17 22:44:43 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:27:04 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,10 @@ int	check_map(char **map)
 	check_walls(map);
 	check_content(map);
 	cpy_map = cpy_char(map);
+  change_to_null(cpy_map);
 	get_player(map, &i, &j);
-  map_free(cpy_map);
-
+	flood_fill(cpy_map, i, j);
+	check_reachable(cpy_map);
+	map_free(cpy_map);
 	return (0);
 }

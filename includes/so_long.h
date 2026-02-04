@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-09-11 07:59:18 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/13 11:43:47 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:10:05 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,8 @@ int		map_free(char **map);
 int		check_map(char **map);
 char	**cpy_char(char **map);
 void	get_player(char **map, int *i, int *j);
-int	map_len_arr(char **map);
+int		map_len_arr(char **map);
+void	flood_fill(char **cpy_map, int i, int j);
+void	check_reachable(char **cpy_map);
+void	change_to_null(char **map);
 #endif // !SO_LONG_H

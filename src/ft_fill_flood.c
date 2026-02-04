@@ -6,7 +6,7 @@
 /*   By: brunmigu <brunmigu@student.42porto.com>    #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025-09-17 22:12:31 by brunmigu          #+#    #+#             */
-/*   Updated: 2025/09/18 13:27:26 by brunmigu         ###   ########.fr       */
+/*   Updated: 2025/09/18 15:04:36 by brunmigu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,35 @@ void	get_player(char **map, int *i, int *j)
 	}
 }
 
-void flood_fill(char **cpy_map, int i, int j)
+void	flood_fill(char **cpy_map, int i, int j)
 {
+	if (i < 0 || j < 0 || i >= map_len_arr(cpy_map) || j >= (int)ft_strlen(cpy_map[i]))
+		return ;
+	if (cpy_map[i][j] == '1' || cpy_map[i][j] == 'V')
+		return ;
+	cpy_map[i][j] = 'V';
+	flood_fill(cpy_map, i + 1, j);
+	flood_fill(cpy_map, i - 1, j);
+	flood_fill(cpy_map, i, j + 1);
+	flood_fill(cpy_map, i, j - 1);
+}
 
+void	check_reachable(char **cpy_map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (cpy_map[i])
+	{
+		while (cpy_map[i][j])
+		{
+			if (cpy_map[i][j] == 'C' || cpy_map[i][j] == 'E')
+				print_error("Not all collectibles or exit are reachable");
+      j++;
+		}
+    j = 0;
+    i++;
+	}
 }
